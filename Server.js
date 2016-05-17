@@ -28,6 +28,6 @@ server.use(skype.verifySkypeCert({}));
 */
 
 server.post('/v1/chat', skype.messagingHandler(botService));
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 8080;
 server.listen(port);
 console.log('Listening for incoming requests on port ' + port);
