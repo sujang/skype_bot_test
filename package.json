@@ -1,0 +1,27 @@
+{
+  "name": "echo_agent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "engines": {
+    "node": ">=5.6.0"
+  },
+  "author": "sujang",
+  "license": "ISC",
+  "dependencies": {
+    "restify": "^4.0.4",
+    "skype-sdk": "./skype-sdk.tar.gz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sujang/skype_bot_test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sujang/skype_bot_test/issues"
+  },
+  "homepage": "https://github.com/sujang/skype_bot_test#readme"
+}
