@@ -13,10 +13,12 @@ const botService = new skype.BotService({
 });
 
 botService.on('contactAdded', (bot, data) => {
+	console.log('contactAdded comes');
     bot.reply(`Hello ${data.fromDisplayName}!`, true);
 });
 
 botService.on('personalMessage', (bot, data) => {
+	console.log('personalMessage comes');
     bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
 });
 
