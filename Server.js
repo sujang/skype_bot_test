@@ -3,6 +3,9 @@ const restify = require('restify');
 const skype = require('skype-sdk');
 
 console.log('Server.js Called');
+console.log('BOT_ID:'+process.env.BOT_ID);
+console.log('APP_ID:'+process.env.APP_ID);
+console.log('APP_SECRET:'+process.env.APP_SECRET);
 
 const botService = new skype.BotService({
     messaging: {
@@ -13,7 +16,9 @@ const botService = new skype.BotService({
         appSecret: process.env.APP_SECRET
     }
 });
-console.log('botService Created');
+if (botService) {
+	console.log('botService Created');
+}
 
 botService.on('contactAdded', (bot, data) => {
     bot.reply(`Hello ${data.fromDisplayName}!`, true);
