@@ -20,14 +20,12 @@ botService.on('contactAdded', (bot, data) => {
 });
 
 botService.on('personalMessage', (bot, data) => {
-	bot.send('ais_k_kangsujang', 'aaaaa', true, clback);
+	console.log('onPersonalMessage Recieved');
+	bot.send('ais_k_kangsujang', 'aaaaa', true);
 	// bot.reply('aaaa', true);
     // bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
 });
 
-function clback() {
-	console.error('callback called');
-}
 const server = restify.createServer();
 
 console.log('server Created');
