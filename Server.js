@@ -35,7 +35,7 @@ server.use(skype.ensureHttps(true));
 server.use(skype.verifySkypeCert({}));
 */
 
-server.post('https://skypebot.herokuapp.com/v1/chat', skype.messagingHandler(botService));
 const port = process.env.PORT || 8080;
+server.post('https://skypebot.herokuapp.com:'+port+'/v1/chat', skype.messagingHandler(botService));
 server.listen(port);
 console.log('Listening for incoming requests on port ' + port);
