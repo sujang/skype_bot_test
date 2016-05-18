@@ -17,7 +17,8 @@ botService.on('contactAdded', (bot, data) => {
 });
 
 botService.on('personalMessage', (bot, data) => {
-	bot.reply('aaaa', true);
+	bot.send('ais_k_kangsujang', 'aaaaa', true, clback);
+	// bot.reply('aaaa', true);
     // bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
 });
 
