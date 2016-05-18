@@ -6,7 +6,7 @@ console.log('Server.js Called');
 
 const botService = new skype.BotService({
     messaging: {
-        botId: process.env.BOT_ID,
+        botId: "28:"+process.env.BOT_ID,
         serverUrl : "https://apis.skype.com",
         requestTimeout : 15000,
         appId: process.env.APP_ID,
@@ -25,6 +25,12 @@ botService.on('personalMessage', (bot, data) => {
 	// bot.reply('aaaa', true);
     // bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
 });
+
+// Create bot and add dialogs
+// var bot = new builder.SkypeBot(botService);
+// bot.add('/', function (session) {
+//    session.send('Hello World'); 
+// });
 
 const server = restify.createServer();
 
