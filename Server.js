@@ -45,7 +45,7 @@ botService.on('message', (bot, data) => {
     // bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
 });
 
-botService.onPersonalCommand('.*message.*', funtion() {
+botService.onPersonalCommand('message', funtion() {
 	console.log('onPersonalCommand Called');
 });
 
