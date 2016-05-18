@@ -1,7 +1,6 @@
 const fs = require('fs');
 const restify = require('restify');
 const skype = require('skype-sdk');
-const builder = require('botbuilder');
 
 console.log('Server.js Called');
 
@@ -23,14 +22,8 @@ botService.on('contactAdded', (bot, data) => {
 botService.on('personalMessage', (bot, data) => {
 	console.log('onPersonalMessage Recieved');
 	bot.send('ais_k_kangsujang', 'aaaaa', true);
-	// bot.reply('aaaa', true);
-    // bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
-});
-
-// Create bot and add dialogs
-var bot = new builder.SkypeBot(botService);
-bot.add('/', function (session) {
-   session.send('Hello World'); 
+	bot.reply('aaaa', true);
+    bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
 });
 
 const server = restify.createServer();
@@ -42,7 +35,7 @@ server.use(skype.ensureHttps(true));
 server.use(skype.verifySkypeCert({}));
 */
 
-server.post('/v1/chat', skype.messagingHandler(botService));
+server.post('https://skypebot.herokuapp.com/v1/chat', skype.messagingHandler(botService));
 const port = process.env.PORT || 8080;
 server.listen(port);
 console.log('Listening for incoming requests on port ' + port);
