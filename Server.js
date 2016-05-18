@@ -23,7 +23,7 @@ botService.on('personalMessage', (bot, data) => {
 });
 
 function clback() {
-	console.info('callback called');
+	console.error('callback called');
 }
 const server = restify.createServer();
 
