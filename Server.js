@@ -21,6 +21,9 @@ botService.on('personalMessage', (bot, data) => {
     // bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
 });
 
+function clback() {
+	console.info('callback called');
+}
 const server = restify.createServer();
 
 /* Uncomment following lines to enable https verification for Azure.
