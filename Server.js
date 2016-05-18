@@ -2,6 +2,8 @@ const fs = require('fs');
 const restify = require('restify');
 const skype = require('skype-sdk');
 
+console.log('Server.js Called');
+
 const botService = new skype.BotService({
     messaging: {
         botId: process.env.BOT_ID,
@@ -11,6 +13,7 @@ const botService = new skype.BotService({
         appSecret: process.env.APP_SECRET
     }
 });
+console.log('botService Created');
 
 botService.on('contactAdded', (bot, data) => {
     bot.reply(`Hello ${data.fromDisplayName}!`, true);
@@ -26,6 +29,8 @@ function clback() {
 	console.error('callback called');
 }
 const server = restify.createServer();
+
+console.log('server Created');
 
 /* Uncomment following lines to enable https verification for Azure.
 server.use(skype.ensureHttps(true));
