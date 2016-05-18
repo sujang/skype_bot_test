@@ -10,7 +10,8 @@ console.log('APP_SECRET:'+process.env.APP_SECRET);
 const botService = new skype.BotService({
     messaging: {
         // botId: process.env.BOT_ID,
-        botId: '28:<bot’s id="">',
+        // botId: '28:<bot’s id="">',
+        botId: '28:'+process.env.BOT_ID,
         serverUrl : "https://apis.skype.com",
         requestTimeout : 15000,
         appId: process.env.APP_ID,
@@ -28,6 +29,8 @@ botService.on('contactAdded', (bot, data) => {
 
 botService.on('personalMessage', (bot, data) => {
 	console.log('onPersonalMessage Recieved');
+	console.log(bot);
+	console.log(data);
 	// bot.send('ais_k_kangsujang', 'aaaaa', true);
 	// bot.reply('aaaa', true);
     bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
