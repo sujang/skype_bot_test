@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "restify": "^4.0.4",
-    // "skype-sdk": "file:skype-sdk.tar.gz"
+    "skype-sdk": "file:skype-sdk.tar.gz"
   },
   "repository": {
     "type": "git",
