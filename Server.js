@@ -47,7 +47,8 @@ botService.on('message', (bot, data) => {
 
 botService.onPersonalCommand('.*message.*', funtion() {
 	console.log('onPersonalCommand Called');
-})
+});
+
 const server = restify.createServer();
 
 console.log('server Created');
