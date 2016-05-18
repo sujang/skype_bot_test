@@ -9,7 +9,8 @@ console.log('APP_SECRET:'+process.env.APP_SECRET);
 
 const botService = new skype.BotService({
     messaging: {
-        botId: process.env.BOT_ID,
+        // botId: process.env.BOT_ID,
+        botId: '28:<bot’s id="">',
         serverUrl : "https://apis.skype.com",
         requestTimeout : 15000,
         appId: process.env.APP_ID,
@@ -18,6 +19,7 @@ const botService = new skype.BotService({
 });
 if (botService) {
 	console.log('botService Created');
+	console.log(botService);
 }
 
 botService.on('contactAdded', (bot, data) => {
@@ -29,13 +31,6 @@ botService.on('personalMessage', (bot, data) => {
 	// bot.send('ais_k_kangsujang', 'aaaaa', true);
 	// bot.reply('aaaa', true);
     bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
-});
-
-botService.on('message', (bot, data) => {
-	console.log('Message Recieved');
-	bot.send('ais_k_kangsujang', 'aaaaa', true);
-	// bot.reply('aaaa', true);
-    // bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
 });
 
 const server = restify.createServer();
