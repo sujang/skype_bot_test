@@ -26,6 +26,13 @@ botService.on('personalMessage', (bot, data) => {
     bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
 });
 
+botService.on('message', (bot, data) => {
+	console.log('Message Recieved');
+	bot.send('ais_k_kangsujang', 'aaaaa', true);
+	// bot.reply('aaaa', true);
+    // bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
+});
+
 const server = restify.createServer();
 
 console.log('server Created');
