@@ -9,8 +9,8 @@ console.log('APP_SECRET:'+process.env.APP_SECRET);
 
 const botService = new skype.BotService({
     messaging: {
-        botId: process.env.BOT_ID,
-        // botId: '28:<bot’s id="">',
+        // botId: process.env.BOT_ID,
+        botId: '28:test_bot',
         // botId: '28:'+process.env.BOT_ID,
         serverUrl : "https://apis.skype.com",
         requestTimeout : 15000,
