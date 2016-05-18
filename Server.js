@@ -21,8 +21,8 @@ botService.on('contactAdded', (bot, data) => {
 
 botService.on('personalMessage', (bot, data) => {
 	console.log('onPersonalMessage Recieved');
-	bot.send('ais_k_kangsujang', 'aaaaa', true);
-	bot.reply('aaaa', true);
+	// bot.send('ais_k_kangsujang', 'aaaaa', true);
+	// bot.reply('aaaa', true);
     bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
 });
 
@@ -36,6 +36,6 @@ server.use(skype.verifySkypeCert({}));
 */
 
 const port = process.env.PORT || 8080;
-server.post('https://skypebot.herokuapp.com/v1/chat', skype.messagingHandler(botService));
+server.post('/v1/chat', skype.messagingHandler(botService));
 server.listen(port);
 console.log('Listening for incoming requests on port ' + port);
