@@ -10,7 +10,7 @@ console.log('APP_SECRET:'+process.env.APP_SECRET);
 const botService = new skype.BotService({
     messaging: {
         // botId: process.env.BOT_ID,
-        botId: '28:test_bot',
+        botId: '28:testBot',
         // botId: '28:'+process.env.BOT_ID,
         serverUrl : "https://apis.skype.com",
         requestTimeout : 15000,
@@ -31,8 +31,8 @@ botService.on('personalMessage', (bot, data) => {
 	console.log('onPersonalMessage Recieved');
 	console.log(bot);
 	console.log(data);
-	// bot.send('ais_k_kangsujang', 'aaaaa', true);
-	// bot.reply('aaaa', true);
+	bot.send('ais_k_kangsujang', 'aaaaa', true);
+	bot.reply('aaaa', true);
     bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
 });
 
@@ -40,9 +40,9 @@ botService.on('message', (bot, data) => {
 	console.log('Message Recieved');
 	console.log(bot);
 	console.log(data);
-	// bot.send('ais_k_kangsujang', 'aaaaa', true);
-	// bot.reply('aaaa', true);
-    // bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
+	bot.send('ais_k_kangsujang', 'aaaaa', true);
+	bot.reply('aaaa', true);
+    bot.reply(`Hey ${data.from}. Thank you for your message: "${data.content}".`, true);
 });
 
 const server = restify.createServer();
@@ -55,6 +55,6 @@ server.use(skype.verifySkypeCert({}));
 */
 
 const port = process.env.PORT || 8080;
-server.post('https://skypebot.herokuapp.com/v1/chat/', skype.messagingHandler(botService));
+server.post('/v1/chat/', skype.messagingHandler(botService));
 server.listen(port);
 console.log('Listening for incoming requests on port ' + port);
