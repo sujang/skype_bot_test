@@ -13,7 +13,7 @@ const botService = new skype.BotService({
         botId: '28:testBot',
         // botId: '28:'+process.env.BOT_ID,
         serverUrl : "https://apis.skype.com",
-        requestTimeout : 15000,
+        requestTimeout : 30000,
         appId: process.env.APP_ID,
         appSecret: process.env.APP_SECRET
     }
